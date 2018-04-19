@@ -34,7 +34,7 @@ public class CollabPaintWebSocketConfig extends AbstractWebSocketMessageBrokerCo
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableStompBrokerRelay("/topic/").setRelayHost("buck.rmq.cloudamqp.com").setRelayPort(61613).
+        config.enableStompBrokerRelay("/topic/").setRelayHost("termite.rmq.cloudamqp.com").setRelayPort(61613).
             setClientLogin("lzclnntl").
             setClientPasscode("PgEcDQDuo-BQQzIGFbILB6Lfeoagdwhg").
             setSystemLogin("lzclnntl").
