@@ -50,7 +50,7 @@ var app = (function () {
         currentBoard = board;
         
         //subscribe to /topic/newpoint when connections succeed
-        stompClient.connect({}, function (frame) {
+        stompClient.connect("lzclnntl","PgEcDQDuo-BQQzIGFbILB6Lfeoagdwhg", function (frame) {
             console.log('Connected: ' + frame);
             stompClient.subscribe('/topic/newpoint.' + board , function (eventbody) {
             var punto=JSON.parse(eventbody.body);
@@ -61,7 +61,13 @@ var app = (function () {
             var points = JSON.parse(eventbody.body);
             addPolygonToCanvas(points);
             });
-        });
+        }
+        , 
+        function(error){
+            console.info("error"+error);
+        }
+
+        , "lzclnntl");
 
     };
     
